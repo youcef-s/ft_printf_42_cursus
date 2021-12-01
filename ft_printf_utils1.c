@@ -21,14 +21,7 @@ int	ft_hexa(unsigned int h, char *base)
 	len = 0;
 	if (h == 0)
 		return (ft_char('0'));
-	if (h < 0 || h > 4294967295)
-	{
-		h1 = 4294967296 - h;
-		ft_char('-');
-		len++;
-	}
-	else
-		h1 = h;
+	h1 = h;
 	while (h1)
 	{
 		h1 /= 16;
