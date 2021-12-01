@@ -29,6 +29,9 @@ AR = ar -rcs
 
 all: $(NAME)
 
+%.o %.c %.h
+	$(CC) $(CFLAGS) -c -o $@ $<
+
 $(NAME):$(OBJS) $(HEADERS)
 	$(AR) $(NAME) $(OBJS) 
 
