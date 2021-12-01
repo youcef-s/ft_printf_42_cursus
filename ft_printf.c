@@ -20,9 +20,8 @@ int	ft_printf(const char *format, ...)
 	int		norm_is_bulls;
 	va_list	ptr;
 
-	norm_is_bulls = 0;
 	va_start(ptr, format);
-	len = ft_length((char *)format, ptr, norm_is_bulls);
+	len = ft_length((char *)format, ptr, 0);
 	va_end(ptr);
 	return (len);
 }
