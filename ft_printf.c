@@ -17,7 +17,6 @@
 int	ft_printf(const char *format, ...)
 {
 	int		len;
-	int		norm_is_bulls;
 	va_list	ptr;
 
 	va_start(ptr, format);
