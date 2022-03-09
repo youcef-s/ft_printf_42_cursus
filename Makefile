@@ -2,20 +2,11 @@ NAME = libftprintf.a
 
 HEADERS = ft_printf.h libft/libft.h
 
-LIBFT_SRCS = ft_itoa.c\
-			ft_putchar_fd.c\
-			ft_putnbr_fd.c\
-			ft_putstr_fd.c\
-			ft_strlen.c\
-			ft_bzero.c\
-			ft_calloc.c\
-			ft_memset.c\
-			ft_strncmp.c
+LIBFT = Libft/*.o
 
 SRCS =	ft_printf.c\
 		ft_printf_utils1.c\
-		ft_printf_utils2.c\
-		$(addprefix libft/, $(LIBFT_SRCS))
+		ft_printf_utils2.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -32,14 +23,17 @@ all: $(NAME)
 %.o: %.c %.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-$(NAME):$(OBJS) $(HEADERS)
-	$(AR) $(NAME) $(OBJS) 
+$(NAME):$(OBJS) $(HEADERS) $(LIBFT)
+	$(AR) $(NAME) $(LIBFT) $(OBJS)
+
+$(LIBFT):
+	make -C Libft/
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(LIBFT)
 
 fclean:clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) Libft/libft.a
 
 re: fclean all
 
