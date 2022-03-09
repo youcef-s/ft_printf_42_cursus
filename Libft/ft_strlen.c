@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylabtaim <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:25:19 by ylabtaim          #+#    #+#             */
-/*   Updated: 2021/11/01 17:18:45 by ylabtaim         ###   ########.fr       */
+/*   Updated: 2022/03/09 20:59:23 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
-	
+
 	i = 0;
 	if (!s)
 		return (0);
